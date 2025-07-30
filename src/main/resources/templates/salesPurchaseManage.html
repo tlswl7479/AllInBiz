@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<th:block>
+    <link rel="stylesheet" type="text/css" href="/css/manage.css">
+    <div class="salesPurchaseManage">
+        <div class="title">
+            <h1 class="Title">매출매입 - 관리</h1>
+        </div>
+        <div class="main">
+
+            <div class="controlBox">
+                <div class="dropDown">대상년도</div>
+                <select>
+                    <option>2025</option>
+                    <option>2024</option>
+                </select>
+
+                <div class="input">
+                    등록번호
+                    <input type="text" class="inputRegistrationNum" name="registrationNum" id="registrationNum">
+                </div>
+
+                <button class="saveBtn">저장</button>
+            </div>
+
+            <div class="info">
+                <div class="gridCell">
+                    대상년도 총 손익금액
+                </div>
+                <div class="gridCell">
+                    대상년도 총 손익금액 자동 산출
+                </div>
+                <div class="gridCell">
+                    종합소득세/법인세
+                </div>
+                <div class="gridCell">
+                    대상년도 종소세/법인세 자동 산출
+                </div>
+            </div>
+
+
+            <div class="dataGrid">
+                <div class="gridCell">항목</div>
+                <div class="gridCell">1분기</div>
+                <div class="gridCell">2분기</div>
+                <div class="gridCell">3분기</div>
+                <div class="gridCell">4분기</div>
+
+                <div class="gridCell">매출</div>
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+
+
+                <div class="gridCell">매입</div>
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+                <input type="text" class="gridCell" placeholder="매출 입력란">
+
+                <div class="gridCell">손익</div>
+                <div class="gridCell">1분기 손익금액 자동 산출</div>
+                <div class="gridCell">2분기 손익금액 자동 산출</div>
+                <div class="gridCell">3분기 손익금액 자동 산출</div>
+                <div class="gridCell">4분기 손익금액 자동 산출</div>
+            </div>
+
+        </div>
+    </div>
+</th:block>
+</body>

@@ -1,0 +1,45 @@
+.Title {
+    text-align: center;
+	font-size: 50px;
+	margin-top: 50px;
+}
+
+.signupForm {
+    text-align: center;
+	padding: 50px;
+	width: 400px;
+	margin: auto;
+}
+
+.input {
+    margin: auto;
+	width: 300px;
+}
+
+.inputName {
+	width: 100%;
+	line-height: 1.5;
+}
+
+.inputId {
+	width: 100%;
+	line-height: 1.5;
+}
+
+.inputPw {
+	width: 100%;
+	line-height: 1.5;
+	margin-top: 8px;
+}
+
+button {
+	width: 300px;
+	border: 1px solid #ced4da;
+	border-radius: 5px;
+	padding: 5px 50px;
+	background: green;
+}
+
+.a {
+    font-size: 50px
+}

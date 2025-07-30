@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<th:block>
+    <link rel="stylesheet" type="text/css" href="/css/calendar.css">
+    <div class="calendar">
+        <div class="title">
+            <h1 class="Title">업무 캘린더</h1>
+        </div>
+        <div class="main">
+            <div class="center">
+
+
+                <div class="nav">
+                    <button onclick="prevMonth()">← 이전</button>
+                    <div id="monthLabel"></div>
+                    <button onclick="nextMonth()">다음 →</button>
+                </div>
+                <div id="calendar">
+                    <!-- 요일 -->
+                    <div class="day">일</div>
+                    <div class="day">월</div>
+                    <div class="day">화</div>
+                    <div class="day">수</div>
+                    <div class="day">목</div>
+                    <div class="day">금</div>
+                    <div class="day">토</div>
+                </div>
+
+
+                <script th:inline="javascript">
+                    // 현재 날짜 기준으로 달력 렌더
+                    let current = new Date();
+
+                    // 캘린더 렌더 함수
+                    function renderCalendar(date) {
+                      const calendar = document.getElementById('calendar');
+                      const year = date.getFullYear();
+                      const month = date.getMonth();
+
+
+                      document.getElementById('monthLabel').innerText = `${year}년 ${month + 1}월`;
+
+                      // 기존 날짜 제거
+                      const oldDates = document.querySelectorAll('.date');
+                      oldDates.forEach(el => el.remove());
+
+                      const firstDay = new Date(year, month, 1).getDay();
+                      const lastDate = new Date(year, month + 1, 0).getDate();
+
+                      // 빈칸 삽입
+                      for (let i = 0; i < firstDay; i++) {
+                        const blank = document.createElement('div');
+                        blank.className = 'date';
+                        calendar.appendChild(blank);
+                      }
+
+                      // 날짜 채우기
+                      for (let i = 1; i <= lastDate; i++) {
+                        const dateCell = document.createElement('div');
+                        dateCell.className = 'date';
+                        dateCell.innerText = i;
+
+                        if (
+                          i === new Date().getDate() &&
+                          month === new Date().getMonth() &&
+                          year === new Date().getFullYear()
+                        ) {
+                          dateCell.classList.add('today');
+                        }
+
+                        // 일정 추가 클릭 이벤트, 수정 필요
+                        dateCell.addEventListener('click', () => {
+                          const title = prompt(`${year}-${month + 1}-${i} 일정 입력:`);
+                          if (title) {
+                            const note = document.createElement('div');
+                            note.style.fontSize = '0.8em';
+                            note.style.color = 'blue';
+                            note.innerText = title;
+                            dateCell.appendChild(note);
+
+                            // 값 수신
+
+                          }
+                        });
+
+                        calendar.appendChild(dateCell);
+                      }
+                    }
+
+                    // 월 이동 함수
+                    function prevMonth() {
+                      current.setMonth(current.getMonth() - 1);
+                      // 캘린더 다시그리기
+                      renderCalendar(current);
+                    }
+
+                    function nextMonth() {
+                      current.setMonth(current.getMonth() + 1);
+                      renderCalendar(current);
+                    }
+
+                    renderCalendar(current);
+                </script>
+
+
+
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>

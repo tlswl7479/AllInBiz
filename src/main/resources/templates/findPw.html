@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<th:block>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <div class="login">
+        <div class="title">
+            <h1 class="Title">AllInBiz</h1>
+        </div>
+        <div class="main">
+            <div class="center">
+                <form th:action="@{/findPw}" method="post">
+                    <br>
+                    <div class="loginForm">
+                        <div class="input">
+                            <input type="text" class="inputId" name="loginId" id="loginId" placeholder="아이디">
+                        </div>
+                        <button>비밀번호 찾기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>

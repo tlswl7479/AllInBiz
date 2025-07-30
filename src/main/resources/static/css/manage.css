@@ -1,0 +1,50 @@
+.Title {
+    color: black;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px
+    margin: 0 auto;
+}
+
+.controlBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items; center;
+    gap: 10px
+    padding: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.saveBtn {
+    padding: 8px 20px;
+    margin-left: auto;
+    color: red;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.dataGrid {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr; /* 그리드 열 너비 설정 */
+    gap: 5px; /* 셀 사이의 간격 */
+    text-align: center;
+}
+
+.gridCell {
+    background-color: #f8f9fa;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
